@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["antd", "antd Pro", "ANT DESIGN PRO", "mobx", "cli", "admin"],
   "author": "",
   "license": "ISC",
   "dependencies": {
