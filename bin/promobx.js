@@ -6,6 +6,7 @@ import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const packageConfig = require('../package.json')
 // import packageConfig from '../package.json' assert { type: 'json' };
+import create from '../lib/create.js'
 
 const program = new Command();
 
@@ -13,18 +14,25 @@ program.command('create <app-name>')
   .description('create a new project')
   .option('-f, --force', 'overwrite target directory if it exists')
   .action((appName, cmd) => {
-    console.log(appName, cmd);
+    create(appName, cmd).then(() => {
+      console.log(chalk.green(`
+        Create project ${appName} successfully
+      `));
+      console.log(`
+        Run ${chalk.cyan(`cd ${appName} && npm run start`)} to enjoy it
+      `);
+    });
   })
 
-program.command('config [value]')
-  .description('inspect and modify the config')
-  .option('-g --get <path>', 'get value from option')
-  .option('-s --set <path> <value>', 'set value')
-  .option('-d --delete <path>', 'delete value from config')
-  .option('-l --list', 'list all config options')
-  .action((value, cmd) => {
-    console.log(value, cmd);
-  })
+// program.command('config [value]')
+//   .description('inspect and modify the config')
+//   .option('-g --get <path>', 'get value from option')
+//   .option('-s --set <path> <value>', 'set value')
+//   .option('-d --delete <path>', 'delete value from config')
+//   .option('-l --list', 'list all config options')
+//   .action((value, cmd) => {
+//     console.log(value, cmd);
+//   })
 
 program.on('--help', () => {
   console.log(`
