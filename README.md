@@ -3,7 +3,7 @@
   Create admin which is builded with antd pro and mobx
 
 ## Template repository url
-  > [https://github.com/HedgehogOrg/antd-pro-admin.git](https://github.com/HedgehogOrg/antd-pro-admin.git)
+  [https://github.com/HedgehogOrg/antd-pro-admin.git](https://github.com/HedgehogOrg/antd-pro-admin.git)
 
 
 ## Install
